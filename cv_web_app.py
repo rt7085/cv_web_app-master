@@ -1,9 +1,10 @@
 # Importing the libraries.
 import streamlit as st
 from streamlit_drawable_canvas import st_canvas
-import numpy as np
-import cv2
+# import numpy as np
+# import cv2
 from utils import *
+
 
 def prediction(net):   
     # Draw or clear?
@@ -22,6 +23,7 @@ def prediction(net):
             st.write('Recognized Digit: {}'.format(digit))
             st.write('Confidence: {:.2f}'.format(confidence))
 
+
 def main():
     # Load Digit Recognition model
     net = cv2.dnn.readNetFromONNX('model.onnx')
@@ -34,6 +36,7 @@ def main():
     st.write("To draw the digit, check the checkbox")
 
     prediction(net)
+
 
 if __name__ == '__main__':
     main()

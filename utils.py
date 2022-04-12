@@ -2,10 +2,12 @@
 import numpy as np
 import cv2
 
+
 # Implements softmax function
 def softmax(x):
     """Compute softmax values for each sets of scores in x."""
     return np.exp(x) / np.sum(np.exp(x), axis=0)
+
 
 def predictDigit(image,net):
     # Save image
